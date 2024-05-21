@@ -1,9 +1,7 @@
-package netology.dao_with_hibernate;
+package com.example.sql_dao_hibernate.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,18 +9,20 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 @Embeddable
-public class Contact implements Serializable {
-    @Column(length = 50, name = "name", nullable = false)
+public class PersonKey implements Serializable {
+    @Column(nullable = false)
     private String name;
-    @Column(length = 50, name = "surname", nullable = false)
+
+    @Column(nullable = false)
     private String surname;
-    @Column(length = 3, name = "age", nullable = false)
+
+    @Column(nullable = false)
     private int age;
+
 
 }
